@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto; /* Center the container horizontally */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid black; /* Black border */
+        }
+        h1 {
+            color: black;
+            margin-top: 0;
+            font-size: 24px; /* Slightly larger font size */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto; /* Center the images horizontally */
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 16px; /* Slightly larger font size */
+        }
+        .signature {
+            margin-top: 20px;
+            font-style: italic;
+            color: #888;
+        }
+        .logo {
+            max-width: 200px;
+            margin: 20px auto; /* Center the logo horizontally */
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1 th:text="${titolo}"></h1>
+    <div th:text="${contenuto}"></div>
+
+    <p>
+        <a href="https://www.prodottinobilimarchigiani.com/">Visita il nostro sito!</a>
+    </p>
+
+    <p>
+        Saluti,<br>
+        <em>Prodotti Nobili Marchigiani</em>
+    </p>
+    <p>Seguici:</p>
+    <p style="color: #333;">
+        <a href="https://www.instagram.com/your_instagram_username" style="text-decoration: none;">
+            <img src="cid:instagram_icon" alt="Instagram" style="width: 30px; height: 30px; display: inline-block; margin-right: 10px;">
+        </a>
+        <a th:href="${linkFacebook}" style="text-decoration: none;">
+            <img src="cid:facebook_icon" alt="Facebook" style="width: 30px; height: 30px; display: inline-block;">
+        </a>
+        <a href="https://wa.me/1234567890?text=Hello" style="text-decoration: none;">
+            <img src="cid:whatsapp_icon" alt="WhatsApp" style="width: 30px; height: 30px; display: inline-block;">
+        </a>
+    </p>
+    <!-- Include the logo -->
+    <img class="logo" src="cid:logo"  alt="Company Logo">
+</div>
+
+</body>
+</html>

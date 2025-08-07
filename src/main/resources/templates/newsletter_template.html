@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto; /* Center the container horizontally */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid black; /* Black border */
+        }
+        h1 {
+            color: black;
+            margin-top: 0;
+            font-size: 24px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            max-width: 300px;
+            margin: 20px auto; /* Center the images horizontally */
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .logo {
+            max-width: 200px;
+            margin: 20px auto; /* Center the logo horizontally */
+        }
+
+        /* Media query for devices with a width greater than 600px (web and tablet) */
+        @media screen and (min-width: 600px) {
+            .container {
+                margin: 20px auto; /* Center the container horizontally */
+                text-align: left; /* Align content to the left on larger devices */
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${newsletter.titolo}"></h1>
+    <div th:text="${newsletter.contenuto}"></div>
+    <img th:if="${newsletter.image != null}" th:src="|cid:base64|" alt="Newsletter Image">
+    <p>Saluti,<br>
+        <em>Prodotti Nobili Marchigiani</em>
+
+    </p>
+    <p>Seguici:</p>
+    <p style="color: #333;">
+        <a href="https://www.instagram.com/your_instagram_username" style="text-decoration: none;">
+            <img src="cid:instagram_icon" alt="Instagram" style="width: 30px; height: 30px; display: inline-block; margin-right: 10px;">
+        </a>
+        <a th:href="${linkFacebook}" style="text-decoration: none;">
+            <img src="cid:facebook_icon" alt="Facebook" style="width: 30px; height: 30px; display: inline-block;">
+        </a>
+        <a href="https://wa.me/1234567890?text=Hello" style="text-decoration: none;">
+            <img src="cid:whatsapp_icon" alt="WhatsApp" style="width: 30px; height: 30px; display: inline-block;">
+        </a>
+    </p>
+    <img class="logo" th:src="|cid:logo|" alt="Company Logo">
+</div>
+</body>
+</html>

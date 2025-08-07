@@ -14,7 +14,7 @@ This project, SPM-2023-LES, is a platform developed for an association called _"
 ### Docker
 After cloning the frontend and backend and making sure we have both projects in the same folder that we might call _SPM_ , open the terminal and run the following command: `docker-compose -p SPM up -d`
 ### Help
-If you need more information, consult the [wiki](https://github.com/FabrizioFornari/SPM-2023-LES-Frontend/wiki/Getting-started).
+If you need more information, consult the [wiki](https://github.com/saralonghi/SPM-2023-LES-Backend/wiki/Getting-started).
 
 
 
